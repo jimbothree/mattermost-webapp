@@ -198,7 +198,7 @@ export default class Root extends React.Component {
         const experimentalPrimaryTeam = global.mm_config.ExperimentalPrimaryTeam;
         const primaryTeam = TeamStore.getByName(experimentalPrimaryTeam);
         if (props.location.pathname === '/') {
-            if (UserStore.getNoAccounts()) {
+            if (global.mm_config.NoAccounts === 'true') {
                 this.props.history.push('/signup_user_complete');
             } else if (UserStore.getCurrentUser() && primaryTeam) {
                 this.props.history.push(`/${primaryTeam.name}/channels/${Constants.DEFAULT_CHANNEL}`);
