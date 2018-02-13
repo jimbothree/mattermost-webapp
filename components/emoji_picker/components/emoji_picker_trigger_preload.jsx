@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export default class EmojiPickerTriggerPreload extends React.PureComponent {
     static propTypes = {
-        allEmojis: PropTypes.object,
+        allEmojis: PropTypes.object
     };
     render() {
         const sections = Object.values(this.props.allEmojis).
